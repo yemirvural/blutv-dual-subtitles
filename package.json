@@ -1,0 +1,21 @@
+{
+  "name": "blutv-dual-subtitles",
+  "version": "1.0.0",
+  "description": "BluTV için çift altyazı desteği",
+  "license": "MIT",
+  "author": "Yusuf Emir Vural <yemirvural@email.com>",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development --watch"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.2",
+    "@babel/preset-env": "^7.23.2",
+    "babel-loader": "^9.1.3",
+    "css-loader": "^6.8.1",
+    "mini-css-extract-plugin": "^2.7.6",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+} 

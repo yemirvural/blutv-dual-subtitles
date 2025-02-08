@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500&display=swap');
+
+#dual-subtitle-container {
+    position: fixed;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    text-align: center;
+    width: 100%;
+    max-width: 80%;
+    pointer-events: none;
+    transition: bottom 0.1s ease;
+}
+
+#subtitle-drag-handle {
+    cursor: ns-resize;
+    color: #ffffff80;
+    font-size: 20px;
+    padding: 5px;
+    margin-bottom: 5px;
+    pointer-events: auto;
+    user-select: none;
+    text-align: center;
+}
+
+#subtitle-drag-handle:hover {
+    color: #ffffff;
+}
+
+#dual-subtitle-container.dragging {
+    transition: none;
+    opacity: 0.8;
+}
+
+#dual-subtitle-container.dragging #subtitle-drag-handle {
+    color: #ffffff;
+}
+
+#original-subtitle, #translated-subtitle {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: 'Work Sans', system-ui, arial;
+}
+
+#original-subtitle {
+    color: #ffd700;
+}
+
+#translated-subtitle {
+    color: white;
+}
+
+.subtitle-settings-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+    margin-right: 10px;
+}
+
+.subtitle-settings-btn:hover {
+    opacity: 0.8;
+}
+
+.subtitle-settings-panel {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(28, 28, 28, 0.95);
+    border-radius: 8px;
+    padding: 20px;
+    z-index: 10000;
+    width: 300px;
+    color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.settings-header h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.setting-item {
+    margin-bottom: 15px;
+}
+
+.setting-item label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.setting-item input[type="color"] {
+    width: 100%;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+}
+
+.setting-item input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+    margin: 10px 0;
+}
+
+.setting-item input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+.setting-item select {
+    width: 100%;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    color: white;
+    font-size: 14px;
+}
+
+.setting-item select:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.setting-item span {
+    float: right;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+#dual-subtitles-container {
+    transition: bottom 0.3s ease;
+}
+
+#dual-subtitles-container.dragging {
+    transition: none;
+    opacity: 0.8;
+}
+
+#subtitle-drag-handle:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+#original-subtitle:empty,
+#translated-subtitle:empty {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+}
+
+.subtitle-container {
+    transition: bottom 0.3s ease;
+    font-family: 'Work Sans', system-ui, arial;
+}
+
+.subtitle-container.dragging {
+    transition: none;
+    opacity: 0.8;
+}
+
+.subtitle-drag-handle {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.subtitle-container:hover .subtitle-drag-handle {
+    opacity: 1;
+}
+
+.subtitle-drag-handle:hover {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.checkbox-label {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    cursor: pointer;
+} 
