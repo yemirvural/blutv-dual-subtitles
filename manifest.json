@@ -19,10 +19,6 @@
     },
     "default_title": "BluTV Dual Subtitles"
   },
-  "permissions": [
-    "activeTab",
-    "storage"
-  ],
   "content_scripts": [
     {
       "matches": ["*://*.blutv.com/*"],
@@ -32,7 +28,7 @@
   ],
   "web_accessible_resources": [{
     "resources": ["icons/*"],
-    "matches": ["*://*.blutv.com/*"]
+    "matches": ["https://blutv.com/*"]
   }],
   "homepage_url": "https://github.com/yemirvural/blutv-dual-subtitles"
-} 
+}

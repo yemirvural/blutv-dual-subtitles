@@ -73,7 +73,7 @@
 }
 
 .subtitle-settings-panel {
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -219,4 +219,9 @@
     height: 16px;
     margin: 0;
     cursor: pointer;
+}
+
+/* Panel'in player wrapper içinde doğru konumlanması için */
+.theo-player-wrapper {
+    position: relative;
 } 

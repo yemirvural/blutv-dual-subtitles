@@ -385,6 +385,13 @@ class DualSubtitles {
             return;
         }
 
+        // Theo player wrapper'ı bul
+        const playerWrapper = document.querySelector('.theo-player-wrapper');
+        if (!playerWrapper) {
+            console.error('Player wrapper bulunamadı');
+            return;
+        }
+
         const panel = document.createElement('div');
         panel.className = 'subtitle-settings-panel';
         panel.innerHTML = `
@@ -551,11 +558,17 @@ class DualSubtitles {
         const closeBtn = panel.querySelector('.close-btn');
         closeBtn.addEventListener('click', closePanel);
 
+        // Panel'i player wrapper'a ekle
+        playerWrapper.appendChild(panel);
+        this.settingsPanel = panel;
+
         // Panel dışına tıklamayı dinle
         const handleOutsideClick = (e) => {
-            // Ayarlar butonuna tıklanmadıysa ve panel dışına tıklandıysa kapat
             if (!e.target.closest('.subtitle-settings-btn') && !panel.contains(e.target)) {
-                closePanel();
+                if (this.settingsPanel) {
+                    this.settingsPanel.remove();
+                    this.settingsPanel = null;
+                }
                 document.removeEventListener('click', handleOutsideClick);
             }
         };
@@ -564,9 +577,6 @@ class DualSubtitles {
         setTimeout(() => {
             document.addEventListener('click', handleOutsideClick);
         }, 0);
-
-        document.body.appendChild(panel);
-        this.settingsPanel = panel;
     }
 
     // Hex renk kodunu RGB'ye çeviren yardımcı fonksiyon
